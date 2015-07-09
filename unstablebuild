@@ -1,0 +1,127 @@
+class Mainmethod
+NormFunc = Array["Squareroot", "Addition", "Subtraction", "Multiplication", "Division", "Exponents"]
+TrigFunc = Array["Sin","Cosine","Tangent"]
+def numeric(num)
+    true if num = Float rescue false
+ end
+    def run
+    puts %&Please Choose A Function#{NormFunc}, or type Trig&
+    funcInput = gets.chomp
+    funcInput = funcInput.downcase
+    funcInput = funcInput.capitalize
+    if funcInput == "Trig"
+        puts %&Please choose a function#{TrigFunc} or type "Back"&
+        trigInput = gets.chomp
+        trigInput = trigInput.downcase
+        trigInput = trigInput.capitalize
+        if trigInput == "Sin"
+        puts "Please enter the number to be determined"
+            sinInput = gets.chomp
+            sinAns = Math.sin(sinInput.to_f)
+            puts "The sin of #{sinInput} is #{sinAns} radians"
+            puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+                   
+		elsif trigInput == "Back"
+		run
+		end
+		end
+    elsif funcInput == "Squareroot"
+            puts "Squareroot:"
+            sqrtinput = gets.chomp
+            if numeric(sqrtinput) != true
+                puts "Please enter a number"
+                puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+
+            else
+                sqrtanswer = Math.sqrt(sqrtinput.to_f)
+                if sqrtanswer == 0.0
+                puts "Please enter a number"
+                else
+                puts "Squareroot of " + sqrtinput + " equals " + sqrtanswer.to_s
+                puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+               end
+               end
+
+    elsif funcInput == "Addition"
+        puts "Please enter first number"
+        additionFirst = gets.chomp
+              puts "Please enter second number"
+              additionSecond = gets.chomp
+               additionAns = additionFirst.to_f + additionSecond.to_f
+               puts "Your answer is #{additionAns}"
+               puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+    elsif funcInput == "Subtraction"
+    puts "Please enter first number"
+        subtractionFirst = gets.chomp
+           puts "Please enter second number"
+           subtractionSecond = gets.chomp
+            subtractionAns = subtractionFirst.to_f - subtractionSecond.to_f
+            puts "Your answer is #{subtractionAns}"
+                   puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+    elsif funcInput == "Multiplication"
+    puts "Please enter first number"
+        multiplicationFirst = gets.chomp
+        puts "Please enter second number"
+            multiplicationSecond = gets.chomp
+            multiplicationAns = multiplicationFirst.to_f * multiplicationSecond.to_f
+                puts "Your answer is #{multiplicationAns}"
+                   puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+    elsif funcInput == "Division"
+    puts "Please enter a first number"
+        divisionFirst = gets.chomp
+        puts "Please enter a second number"
+            divisionSecond = gets.chomp
+            divisionAns = divisionFirst.to_f / divisionSecond.to_f
+                puts "Your answer is #{divisionAns}"
+                   puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+    elsif funcInput == "Exponents"
+           puts "Please enter number to be multiplied exponentially"
+           exponentfirstInput = gets.chomp
+                puts "Please enter number to be the exponent"
+                exponentInput = gets.chomp
+                exponentAns = exponentfirstInput.to_f**exponentInput.to_f
+                puts "Your answer is #{exponentAns}"
+                  puts "Type anything to continue"
+                   restartFunc = gets.chomp
+                   if restartFunc != nil
+                   run
+                   end
+	elsif funcInput == 
+    elsif funcInput = nil
+    puts "Please enter a function"
+    else puts "not a function"
+    run
+    end
+    end
+    end
+
+   instance = Mainmethod.new
+   instance.run
